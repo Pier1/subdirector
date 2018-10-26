@@ -1,0 +1,24 @@
+{
+  "name": "subdirector",
+  "version": "0.1.0",
+  "description": "A bookmarklet for building SRT subtitles to an HTML5 video as it plays.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pier1/subdirector.git"
+  },
+  "keywords": [
+    "subtitles",
+    "SRT",
+    "video"
+  ],
+  "author": "Pier 1 Imports, Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pier1/subdirector/issues"
+  },
+  "homepage": "https://github.com/Pier1/subdirector#readme"
+}
