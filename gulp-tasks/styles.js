@@ -6,10 +6,20 @@
         ['last 3 versions'];
 
       return gulp.src([
-          `./**/*.scss`,
+          `./src/**/*.scss`,
           '!node_modules/**/*'
         ])
         .pipe(plugins.sass())
+        .pipe(plugins.postcss([
+          plugins.cssnano(
+            {
+              autoprefixer: { browsers: supported },
+              normalizeUrl: {
+                stripWWW: false
+              }
+            }
+          )
+        ]))
         .pipe(plugins.autoprefixer({
           browsers: supported
         }))

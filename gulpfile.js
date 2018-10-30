@@ -9,15 +9,16 @@ const config = {
     showFiles: true,
     gzip: true
   },
-  buildPath: '.'
+  buildPath: './build'
 };
 
 function getTask(task, taskParams) {
   return require(`${tasksPath}/${task}`)(gulp, plugins, config, taskParams);
 }
 
-gulp.task('build', ['styles', 'views', 'uglify']);
+gulp.task('build', ['styles', 'views', 'views-inject', 'bookmarkleter']);
 gulp.task('styles', getTask('styles'));
-gulp.task('uglify', getTask('uglify'));
+gulp.task('transpile', getTask('transpile'));
 gulp.task('views', getTask('views'));
+gulp.task('views-inject', getTask('views-inject'));
 gulp.task('watch', getTask('watch'));
