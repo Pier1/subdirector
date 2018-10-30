@@ -3,12 +3,7 @@
   module.exports = (gulp, plugins, config) => {
     return () => {
       const supported =
-        ['Chrome >= 49',
-         'Firefox >= 48',
-         'Safari >= 10',
-         'Edge >= 15',
-         'iOS >= 9',
-         'Android >= 4.4'];
+        ['last 3 versions'];
 
       return gulp.src([
           `./**/*.scss`,
