@@ -16,6 +16,7 @@ function getTask(task, taskParams) {
   return require(`${tasksPath}/${task}`)(gulp, plugins, config, taskParams);
 }
 
+gulp.task('bookmarkleter', getTask('bookmarkleter'));
 gulp.task('build', ['styles', 'views', 'views-inject', 'bookmarkleter']);
 gulp.task('styles', getTask('styles'));
 gulp.task('transpile', getTask('transpile'));
