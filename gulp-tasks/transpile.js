@@ -4,7 +4,7 @@
     return () => {
       return gulp.src([
           `${config.buildPath}/*.js`,
-          `!${config.buildPath}*.es5.js`,
+          `!${config.buildPath}/*.es5.js`,
           `!${config.buildPath}/*.bookmarklet.js`
         ])
         .pipe(gulp.dest(config.buildPath))

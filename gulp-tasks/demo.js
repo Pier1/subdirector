@@ -6,7 +6,7 @@
 
       const bookmarklet = fs.readFileSync(`${config.buildPath}/subdirector.bookmarklet.js`);
 
-      return gulp.src([`${config.srcPath}/demo.pug`])
+      return gulp.src([`${config.srcPath}/demo/index.pug`])
         .pipe(plugins.pug({
           pretty: true,
           locals: {
@@ -14,9 +14,10 @@
           }
         }))
         .pipe(plugins.styleInject({
-          path: `${config.buildPath}/`
+          path: `${config.buildPath}/demo/`
         }))
-        .pipe(gulp.dest(config.buildPath))
+        .pipe(gulp.dest(`${config.buildPath}/demo`))
+        .pipe(gulp.dest('./demo'))
       ;
     }
   };

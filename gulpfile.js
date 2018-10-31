@@ -10,7 +10,9 @@ const config = {
     gzip: true
   },
   buildPath: './build',
-  srcPath: './src'
+  srcPath: './src',
+  demoPath: './src/demo',
+  demoBuildPath: './demo'
 };
 
 function getTask(task, taskParams) {
