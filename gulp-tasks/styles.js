@@ -3,7 +3,7 @@
   module.exports = (gulp, plugins, config) => {
     return () => {
       const supported =
-        ['last 3 versions'];
+        ['last 2 versions'];
 
       return gulp.src([
           `${config.srcPath}/**/*.scss`,
