@@ -1,9 +1,9 @@
-// inject-style src='subdirector.css'
 #subdirector
-  h2 Subdirector
-  .subdirector_buttons
-    button.subdirector_button.subdirector_start Mark Start
-    |  →
-    button.subdirector_button.subdirector_end Mark End
-  label(for='subdirector_text') Subtitle
+  // inject-style src='subdirector.css'
+  .subdirector_logo_wrap
+    .subdirector_logo
+    h2 Subdirector
+  button.subdirector_button.subdirector_start Mark Start
+  label(for='subdirector_text').visually-hidden Subtitle
   textarea#subdirector_text
+  button.subdirector_button.subdirector_end Mark End
