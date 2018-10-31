@@ -6,7 +6,7 @@
       const subdirectorView = fs.readFileSync('./build/subdirector.html');
 
       return gulp.src(['./src/subdirector.js'])
-        .pipe(plugins.injectString.replace('SUBDIRECTOR_VIEW_TOKEN', subdirectorView))
+        .pipe(plugins.injectString.replace('// SUBDIRECTOR_VIEW_TOKEN', `$('body').append(\`${subdirectorView}\`);`))
         .pipe(gulp.dest(config.buildPath))
       ;
     }
