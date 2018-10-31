@@ -6,9 +6,9 @@
     return () => {
       const bookmarkleter = require('bookmarkleter');
 
-      return gulp.src([`./build/subdirector.es5.js`])
+      return gulp.src([`${config.buildPath}/subdirector.es5.js`])
         .pipe(plugins.add('subdirector.bookmarklet.js', bookmarkleter(
-          fs.readFileSync('./build/subdirector.es5.js'), {
+          fs.readFileSync(`${config.buildPath}/subdirector.es5.js`), {
             anonymize: true,
             mangleVars: true,
             jQuery: true

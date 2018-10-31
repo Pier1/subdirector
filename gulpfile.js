@@ -9,17 +9,20 @@ const config = {
     showFiles: true,
     gzip: true
   },
-  buildPath: './build'
+  buildPath: './build',
+  srcPath: './src'
 };
 
 function getTask(task, taskParams) {
   return require(`${tasksPath}/${task}`)(gulp, plugins, config, taskParams);
 }
 
+var runSequence = require('run-sequence');
+
 gulp.task('bookmarkleter', getTask('bookmarkleter'));
-gulp.task('build', ['styles', 'views', 'views-inject', 'bookmarkleter']);
 gulp.task('styles', getTask('styles'));
 gulp.task('transpile', getTask('transpile'));
 gulp.task('views', getTask('views'));
 gulp.task('views-inject', getTask('views-inject'));
 gulp.task('watch', getTask('watch'));
+gulp.task('build', (done) => { runSequence('styles', 'views', 'views-inject', 'transpile', 'bookmarkleter', done) });

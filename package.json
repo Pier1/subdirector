@@ -40,6 +40,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-size": "^3.0.0",
     "gulp-style-inject": "^0.1.1",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "run-sequence": "^2.2.1"
   }
 }

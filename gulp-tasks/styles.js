@@ -6,7 +6,7 @@
         ['last 3 versions'];
 
       return gulp.src([
-          `./src/**/*.scss`,
+          `${config.srcPath}/**/*.scss`,
           '!node_modules/**/*'
         ])
         .pipe(plugins.sass())
