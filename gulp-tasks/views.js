@@ -4,9 +4,8 @@
     return () => {
       var fs = require('fs');
 
-      return gulp.src(['./src/**/*.pug', '!./src/**/_*.pug', '!node_modules/**/*'])
+      return gulp.src(['./src/*.pug', '!./src/_*.pug', '!node_modules/**/*'])
         .pipe(plugins.pug({
-          basedir: __dirname + '/../' + config.templatesPath,
           pretty: true,
           locals: {
           }
