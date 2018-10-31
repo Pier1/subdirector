@@ -4,14 +4,14 @@
     return () => {
       var fs = require('fs');
 
-      return gulp.src(['./src/*.pug', '!./src/_*.pug', '!node_modules/**/*'])
+      return gulp.src([`${config.srcPath}/*.pug`, `!${config.srcPath}/_*.pug`, '!node_modules/**/*'])
         .pipe(plugins.pug({
           pretty: true,
           locals: {
           }
         }))
         .pipe(plugins.styleInject({
-          path: './build/'
+          path: config.buildPath
         }))
         .pipe(gulp.dest(config.buildPath))
       ;
