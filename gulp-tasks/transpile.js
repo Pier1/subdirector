@@ -2,10 +2,15 @@
 (() => {
   module.exports = (gulp, plugins, config) => {
     return () => {
-      return gulp.src([`${config.buildPath}/**/*.js`, `!./**/*.es5.js`])
+      return gulp.src([
+          `${config.buildPath}/*.js`,
+          `!${config.buildPath}*.es5.js`,
+          `!${config.buildPath}/*.bookmarklet.js`
+        ])
+        .pipe(gulp.dest(config.buildPath))
         .pipe(plugins.rename({ suffix: '.es5' }))
         .pipe(plugins.babel({
-          presets: ['@babel/env']
+          presets: ['env']
         }))
         .pipe(gulp.dest(config.buildPath))
       ;

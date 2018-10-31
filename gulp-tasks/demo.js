@@ -4,9 +4,14 @@
     return () => {
       var fs = require('fs');
 
-      return gulp.src([`${config.srcPath}/*.pug`, `!${config.srcPath}/_*.pug`, `!${config.srcPath}/demo.pug`, '!node_modules/**/*'])
+      const bookmarklet = fs.readFileSync(`${config.buildPath}/subdirector.bookmarklet.js`);
+
+      return gulp.src([`${config.srcPath}/demo.pug`])
         .pipe(plugins.pug({
-          pretty: true
+          pretty: true,
+          locals: {
+            bookmarklet: bookmarklet
+          }
         }))
         .pipe(plugins.styleInject({
           path: `${config.buildPath}/`
