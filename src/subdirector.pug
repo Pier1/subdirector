@@ -1,9 +1,15 @@
 #subdirector
+  link(href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,600', rel='stylesheet')
   // inject-style src='subdirector.css'
   .subdirector_logo_wrap
     .subdirector_logo
     h2 Subdirector
-  button.subdirector_button.subdirector_start Mark Start
-  label(for='subdirector_text').visually-hidden Subtitle
-  textarea#subdirector_text
-  button.subdirector_button.subdirector_end Mark End
+  .subdirector_ui_wrap
+    button.subdirector_button.subdirector_start
+      .subdirector_start_image.subdirector_button_image
+      span.subdirector_button_text.subdirector_start_text Start
+    label(for='subdirector_text').visually-hidden Subtitle
+    textarea#subdirector_text
+    button.subdirector_button.subdirector_end
+          .subdirector_end_image.subdirector_button_image
+          span.subdirector_button_text.subdirector_end_text Finish
