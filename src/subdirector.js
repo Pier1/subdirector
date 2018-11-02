@@ -2,12 +2,26 @@
   'use strict';
 
   const video = $('video')[0];
+  const source = video.currentSrc;
 
   // SUBDIRECTOR_VIEW_TOKEN
 
   let subStarted = false;
-  let subs = [];
   let currentSub = {};
+
+  let subsForSource = {
+    source: source,
+    subs: []
+  };
+
+  // if (localStorage.subs) {
+  //   subsForSource = localStorage.subs.find((el) => { return el.source === source; });
+  // } else {
+  //   subsForSource = {
+  //     source: source,
+  //     subs: []
+  //   };
+  // }
 
   $('button').click(() => {
     const time = video.currentTime;
@@ -19,8 +33,9 @@
     } else {
       currentSub.sub = $('#subdirector_text').val();
       currentSub.endTime = time;
-      $('body').append(`<p>${JSON.stringify(currentSub)}</p>`);
-      subs.push(currentSub);
+
+      subsForSource.subs.push(currentSub);
+      localStorage.subs = JSON.stringify(subsForSource);
       currentSub = {};
       subStarted = false;
       $('#subdirector_text').val('');
