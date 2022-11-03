@@ -27,7 +27,7 @@
     "bookmarkleter": "^0.2.2",
     "browser-sync": "^2.26.3",
     "cssnano": "^4.1.7",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-add": "^0.1.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^7.0.1",
